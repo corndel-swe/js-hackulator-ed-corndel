@@ -1,0 +1,25 @@
+{
+  "name": "swe-js-hackulator",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:add": "mocha ./test/add.test.js",
+    "test:subtract": "mocha ./test/subtract.test.js",
+    "test:multiply": "mocha ./test/multiply.test.js",
+    "test:divide": "mocha ./test/divide.test.js",
+    "test:average": "mocha ./test/average.test.js",
+    "test:power": "mocha ./test/power.test.js",
+    "test:remainder": "mocha ./test/remainder.test.js",
+    "test:maxOfThree": "mocha ./test/maxOfThree.test.js",
+    "test:heron": "mocha ./test/heron.test.js",
+    "test:gcd": "mocha ./test/gcd.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}

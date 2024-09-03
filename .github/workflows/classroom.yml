@@ -1,0 +1,132 @@
+name: Autograding Tests
+'on':
+  - push
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Add
+        id: add
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Add
+          setup-command: npm install
+          command: npm run test:add
+          timeout: 1
+          max-score: 1
+
+      - name: Subtract
+        id: subtract
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Subtract
+          setup-command: npm install
+          command: npm run test:subtract
+          timeout: 1
+          max-score: 1
+
+      - name: Multiply
+        id: multiply
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Multiply
+          setup-command: npm install
+          command: npm run test:multiply
+          timeout: 1
+          max-score: 1
+
+      - name: Divide
+        id: divide
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Divide
+          setup-command: npm install
+          command: npm run test:divide
+          timeout: 1
+          max-score: 1
+
+      - name: Average
+        id: average
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Average
+          setup-command: npm install
+          command: npm run test:average
+          timeout: 1
+          max-score: 1
+
+      - name: Power
+        id: power
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Power
+          setup-command: npm install
+          command: npm run test:power
+          timeout: 1
+          max-score: 1
+
+      - name: Remainder
+        id: remainder
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Remainder
+          setup-command: npm install
+          command: npm run test:remainder
+          timeout: 1
+          max-score: 1
+
+      - name: Maxofthree
+        id: maxOfThree
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Maxofthree
+          setup-command: npm install
+          command: npm run test:maxOfThree
+          timeout: 1
+          max-score: 1
+
+      - name: Heron
+        id: heron
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Heron
+          setup-command: npm install
+          command: npm run test:heron
+          timeout: 1
+          max-score: 1
+
+      - name: Gcd
+        id: gcd
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Gcd
+          setup-command: npm install
+          command: npm run test:gcd
+          timeout: 1
+          max-score: 1
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          ADD_RESULTS: '${{steps.add.outputs.result}}'
+          SUBTRACT_RESULTS: '${{steps.subtract.outputs.result}}'
+          MULTIPLY_RESULTS: '${{steps.multiply.outputs.result}}'
+          DIVIDE_RESULTS: '${{steps.divide.outputs.result}}'
+          AVERAGE_RESULTS: '${{steps.average.outputs.result}}'
+          POWER_RESULTS: '${{steps.power.outputs.result}}'
+          REMAINDER_RESULTS: '${{steps.remainder.outputs.result}}'
+          MAXOFTHREE_RESULTS: '${{steps.maxOfThree.outputs.result}}'
+          HERON_RESULTS: '${{steps.heron.outputs.result}}'
+          GCD_RESULTS: '${{steps.gcd.outputs.result}}'
+
+        with:
+          runners: add,subtract,multiply,divide,average,power,remainder,maxOfThree,heron,gcd

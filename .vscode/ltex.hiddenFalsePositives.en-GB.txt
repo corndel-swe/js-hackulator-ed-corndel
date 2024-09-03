@@ -1,0 +1,2 @@
+{"rule":"ADVERB_WORD_ORDER","sentence":"^\\QMake sure to commit and push often - keeping commits small is one of the best ways to keep your project well-organised.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qto get the dependencies.\\E$"}
