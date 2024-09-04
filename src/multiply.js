@@ -3,7 +3,7 @@
  * multiply(2, 3) => 6
  */
 function multiply(x, y) {
-  const result = X * y
+  const result = x * y
   return result
 }
 
