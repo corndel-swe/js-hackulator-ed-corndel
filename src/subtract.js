@@ -13,6 +13,10 @@ function subtract(x, y) {
   if (y < x) {
     return x - y
   }
+
+  if (y === x) {
+    return 0
+  }
 }
 
 export default subtract

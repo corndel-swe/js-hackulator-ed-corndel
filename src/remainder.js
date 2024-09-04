@@ -3,7 +3,7 @@
  * remainder(10, 3) => 1
  */
 function remainder(x, y) {
-  x / y
+  return x % y
 }
 
 export default remainder

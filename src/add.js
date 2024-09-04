@@ -4,7 +4,7 @@
  */
 function add(x, y) {
   const result = x + y
-  return
+  return result
 }
 
 export default add
